@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>ID Card Generator</h1>
+
+  <!-- Template upload -->
+  <div class="controls">
+    <label>Template Image:
+      <input type="file" id="templateUpload" accept="image/*" />
+    </label>
+    <!-- Data upload -->
+    <label>Data File:
+      <input type="file" id="dataUpload" accept=".xlsx,.xls,.csv" />
+    </label>
+    <!-- Default controls -->
+    <label>Default Left:
+      <input type="number" id="defaultLeft" value="0" />
+    </label>
+    <label>Default Top:
+      <input type="number" id="defaultTop" value="0" />
+    </label>
+    <label>Default Size:
+      <input type="number" id="defaultFontSize" value="35" />
+    </label>
+    <button id="applyDefault">Apply Defaults to All</button>
+    <button id="generateBtn">Generate ID Cards</button>
+    <button id="downloadBtn" style="display:none;">Download ZIP</button>
+    <label>Text Color:
+      <input type="color" id="textColorPicker" value="#000000">
+    </label>
+    
+  </div>
+
+  <!-- Template preview container -->
+  <h2>Template Preview</h2>
+  <div id="template-container" style="display:none; margin-bottom:20px;">
+    <img id="template-img" alt="Template Preview" />
+  </div>
+
+  <!-- Generated cards preview -->
+  <div id="preview" class="preview"></div>
+
+  <!-- Libraries -->
+  <script src="libs/xlsx.full.min.js"></script>
+  <script src="libs/html2canvas.min.js"></script>
+  <script src="libs/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
