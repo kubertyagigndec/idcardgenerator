@@ -229,38 +229,7 @@ document.getElementById("downloadBtn").addEventListener("click", async () => {
       const userIP = data.ip;
 
       // Step 2: Send to Google Script
-      fetch("<script>
-  const allowedTokenList = ['client123', 'client456']; // Replace with your valid tokens
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get('token');
-
-  if (!token || !allowedTokenList.includes(token)) {
-    document.body.innerHTML = "<h1>Access Denied</h1><p>Invalid token.</p>";
-    throw new Error("Token invalid");
-  }
-
-  // Step 1: Get current IP
-  fetch("https://api.ipify.org?format=json")
-    .then(res => res.json())
-    .then(data => {
-      const userIP = data.ip;
-
-      // Step 2: Send to Google Script
-      fetch("https://script.google.com/macros/s/AKfycbxVt3Cq-1PLmKx9X1RRQM3E4Uv6j5YAk29t4y_mKUMXSUY4qlHgfyMOJhovq6bRfOZ5/exec", {
-        method: "POST",
-        body: JSON.stringify({ token, ip: userIP }),
-        headers: { "Content-Type": "application/json" }
-      })
-      .then(res => res.json())
-      .then(result => {
-        if (!result.allowed) {
-          document.body.innerHTML = "<h1>Access Denied</h1><p>IP mismatch for this token.</p>";
-        }
-      });
-    });
-</script>
-", {
+      fetch("https://script.google.com/macros/s/AKfycbyR8h_7RqY-1mBW7w5mo4YjrLmsuX4wqTond5j1cnaz1CH76jQQIRWDx0H3LlgGMT0n/exec", {
         method: "POST",
         body: JSON.stringify({ token, ip: userIP }),
         headers: { "Content-Type": "application/json" }
