@@ -229,7 +229,7 @@ document.getElementById("downloadBtn").addEventListener("click", async () => {
       const userIP = data.ip;
 
       // Step 2: Send to Google Script
-      fetch("https://script.googlhttps://script.google.com/macros/s/AKfycbyzzBFhhKQzLeSIvCTOqQsVo0PZVAKD7UINgkfkuqDr1ebUMs7m8WCsElDo4GRMk74/exece.com/macros/s/AKfycbyR8h_7RqY-1mBW7w5mo4YjrLmsuX4wqTond5j1cnaz1CH76jQQIRWDx0H3LlgGMT0n/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbyhtx7e5Vx9HaqohOJdl0Egi-NEaAzb9csNjm1WkrUtPKZhea9ya9Qygqohhf_NvVq3/exec", {
         method: "POST",
         body: JSON.stringify({ token, ip: userIP }),
         headers: { "Content-Type": "application/json" }
